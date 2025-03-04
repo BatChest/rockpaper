@@ -22,46 +22,8 @@ function convertHumanChoice(humanChoice) {
   return 0;
 }
 
-// function scenerio1(humanChoice, computerChoice) {
-//   if (humanChoice == 1 && computerChoice == 2) {
-//     console.log("You lose! Paper beats Rock"); // 1 is loss
-//     return 1;
-//   }
-//   if (humanChoice == 2 && computerChoice == 1) {
-//     console.log("You Win! Paper beats Rock"); // 2 is a win
-//     return 2;
-//   }
-// }
-
-// function scenerio2(humanChoice, computerChoice) {
-//   if (humanChoice == 1 && computerChoice == 3) {
-//     console.log("You Win! Rock beats Scissors"); // 2 is win
-//     return 2;
-//   }
-//   if (humanChoice == 3 && computerChoice == 1) {
-//     console.log("You Lose! Rock beats Scissors"); // 1 is a loss
-//     return 1;
-//   }
-// }
-
-// function scenerio3(humanChoice, computerChoice) {
-//   if (humanChoice == 2 && computerChoice == 3) {
-//     console.log("You Lose! Scissors beats Paper"); // 1 is loss
-//     return 1;
-//   }
-//   if (humanChoice == 3 && computerChoice == 2) {
-//     console.log("You Win! Scissors beats Paper"); // 2 is a win
-//     return 2;
-//   }
-// }
-
-// let rock = 1;
-// let paper = 2;
-// let scissor = 3;
-
 function playRound(humanChoice, computerChoice) {
   let convertedHC = convertHumanChoice(humanChoice);
-  // let outcome;
 
   // First, check for a tie
   if (convertedHC === computerChoice) {
@@ -75,9 +37,11 @@ function playRound(humanChoice, computerChoice) {
     (convertedHC === 3 && computerChoice === 1)) {
     if (convertedHC === 1) {
       console.log("You Win! Rock beats Scissors");
+      humanScore += 1;
       return 2;
     } else {
       console.log("You Lose! Rock beats Scissors");
+      computerScore += 1;
       return 1;
     }
   }
@@ -87,9 +51,11 @@ function playRound(humanChoice, computerChoice) {
     (convertedHC === 2 && computerChoice === 1)) {
     if (convertedHC === 2) {
       console.log("You Win! Paper beats Rock");
+      humanScore += 1;
       return 2;
     } else {
       console.log("You Lose! Paper beats Rock");
+      computerScore += 1;
       return 1;
     }
   }
@@ -99,9 +65,11 @@ function playRound(humanChoice, computerChoice) {
     (convertedHC === 3 && computerChoice === 2)) {
     if (convertedHC === 3) {
       console.log("You Win! Scissors beats Paper");
+      humanScore += 1;
       return 2;
     } else {
       console.log("You Lose! Scissors beats Paper");
+      computerScore += 1;
       return 1;
     }
   }
@@ -114,3 +82,6 @@ console.log(`Player chose: ${playerSelection} (${convertHumanChoice(playerSelect
 console.log(`Computer chose: ${computerSelection}`);
 
 playRound(playerSelection, computerSelection);
+
+console.log(`Player Score: ${humanScore}`);
+console.log(`Player Score: ${computerScore}`);
