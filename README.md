@@ -1,2 +1,2 @@
 # rockpaper
-The game of rock paper scissors played in the console.
+The game of rock paper scissors with first to 5 points win.
